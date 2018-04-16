@@ -1,8 +1,8 @@
 'use strict';
 class Validator {
 	constructor(name,validations){
-		this.name = "Validator"
-  		this.validations = [];		
+		this.name = name || "Validator"
+  		this.validations = validations || [];		
 	}
 
 	validate() {

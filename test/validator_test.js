@@ -17,8 +17,8 @@ describe('Validator tests', function() {
     // 1. ARRANGE
     let validator = new Validator()
     // 2. ACT
-    let validations_length = validator.validations.length;
+    let validations = validator.validations;
     // 3. ASSERT
-    expect(0).to.be.equal(validations_length);
+    expect(validations).to.be.an('array').that.is.empty;
   });
 });
