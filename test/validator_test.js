@@ -1,5 +1,5 @@
 'use strict';
-var Validator = require('../validator/validator.js'); // importo modulo a testear
+var Validator = require('../validator/validator'); // importo modulo a testear
 var expect = require('chai').expect; // biblioteca para validar acerciones de chai
 
 describe('Validator tests', function() {

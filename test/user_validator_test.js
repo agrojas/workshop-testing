@@ -2,7 +2,20 @@
 var UserValidator = require('../validator/user_validator.js'); // importo modulo a testear
 var expect = require('chai').expect; // biblioteca para validar acerciones de chai
 var sinon    = require('sinon'); // biblioteca para mocks
-var ValidationOfDeath = require('../validator/validations/validation_of_death.js'); // Clase a mockear
+var ValidationOfDeath = require('../validator/validations/validation_of_death'); // Clase a mockear
+
+var proxyquire = require('proxyquire')
+
+
+var validation_proxy = class ValidationWithDbDependencies{
+  constructor(){}
+  validate(){
+    console.log('no way');
+    return true
+  }
+};
+
+//var UserValidator = proxyquire('../validator/user_validator', { '../validator/validations/validation_with_db_dependencies': validation_proxy});
 
 
 describe('UserValidator tests', function() {
@@ -10,7 +23,7 @@ describe('UserValidator tests', function() {
     before(function () {
             validationOfDeath = sinon.stub(ValidationOfDeath.prototype, 'validate').callsFake(() => true);
     });
-  
+
 
   it('should validator have a name UserValidator', function () {
     // 1. ARRANGE
@@ -45,8 +58,6 @@ describe('UserValidator tests', function() {
       name: "lalolalolalolalolalolalolalolalolalolalolalolalolalolalo",
       lastName: "landa"
     }
-    //sinon.stub(ValidationOfDeath.prototype, 'validate').callsFake(() => true);
-
     let validator = new UserValidator(user)
     // 2. ACT
     let validations = validator.validate();
@@ -61,7 +72,6 @@ describe('UserValidator tests', function() {
       name: "lalo",
       lastName: "landa"
     }
-    //sinon.stub(ValidationOfDeath.prototype, 'validate').callsFake(() => true);
 
     let validator = new UserValidator(user)
     // 2. ACT

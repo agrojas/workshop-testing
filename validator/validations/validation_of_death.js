@@ -1,5 +1,5 @@
 'use strict';
-var Validation = require('./validation.js');
+var Validation = require('./validation');
 
 class ValidationOfDeath extends Validation {
 	constructor(timeout){
