@@ -3,13 +3,14 @@ var Validation = require('./validation');
 var DBManager = require('../../data_base/db_manager');
 
 class ValidationWithDbDependencies extends Validation {
-	constructor(){
+
+	constructor(email){
   		let name = "ValidationWithDbDependencies"
-		
-		let validate = () => {
-			// Depende de la db
-			let db_manager  = new DBManager()
-			db_manager.getFromDb();	
+		let db_manager  = new DBManager()
+		let validate = async () => {
+			let regexValue = await db_manager.readRow()
+			let regex = new RegExp(regexValue)
+			return regex.test(email);
 		}
   		super(name, validate);
 	}

@@ -7,7 +7,7 @@ var ValidationWithDbDependencies = require('./validations/validation_with_db_dep
 
 class UserValidator extends Validator {
 	constructor(user){
-  		let validations = [ new ValidationWithDbDependencies(),new StringLengthValidation(user.name, 20), new ValidationOfDeath(2000)];
+  		let validations = [ new ValidationWithDbDependencies(user.email),new StringLengthValidation(user.name, 20), new ValidationOfDeath(2000)];
   		super("UserValidator",validations);
 	}
 

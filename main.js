@@ -5,7 +5,8 @@ var UserValidator = require('./validator/user_validator.js');
 
 let user = {
 	name: "lalo",
-	lastName: "landa"
+	lastName: "landa",
+	email: "lalo@landa"
 }
 
 let validator = new UserValidator(user)

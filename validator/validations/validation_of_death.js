@@ -4,7 +4,7 @@ var Validation = require('./validation');
 class ValidationOfDeath extends Validation {
 	constructor(timeout){
   		let name = "ValidationOfDeath"
-		let validate = () => {setTimeout(timeout);}
+		let validate = () => {return setTimeout(()=>{},timeout);}
   		super(name, validate);
 	}
 	validate() {
