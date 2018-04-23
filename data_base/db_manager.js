@@ -9,13 +9,11 @@ class DBManager{
 		this.createTable()		
 	}
 	createTable() {
-	    console.log("createTable regex");
 		this.db.run("CREATE TABLE IF NOT EXISTS regex (value TEXT)");
 		this.insertRows()
 	}
 
 	insertRows() {
-		console.log("insert regex");
 	    var stmt = this.db.prepare("INSERT INTO regex VALUES (?)");
 	    stmt.run("^\w+@\w+\..{2,3}(.{2,3})?$")
 	    stmt.finalize();
@@ -26,7 +24,6 @@ class DBManager{
 	}
 
 	closeDb() {
-	    console.log("closeDb");
 	    this.db.close();
 	}
 
