@@ -1,2 +1,3 @@
 # workshop-testing
-Workshop para pruebas de testing
+
+Se utiliza sinon como biblioteca para mockear dependencias
