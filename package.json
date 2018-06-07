@@ -1,0 +1,29 @@
+{
+  "name": "workshop-testing",
+  "version": "1.0.0",
+  "description": "Workshop para pruebas de testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agrojas/workshop-testing.git"
+  },
+  "keywords": [],
+  "author": "agrojas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agrojas/workshop-testing/issues"
+  },
+  "homepage": "https://github.com/agrojas/workshop-testing#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.0",
+    "sinon": "^4.5.0"
+  },
+  "dependencies": {
+    "proxyquire": "^2.0.1",
+    "sqlite3": "^4.0.0"
+  }
+}
